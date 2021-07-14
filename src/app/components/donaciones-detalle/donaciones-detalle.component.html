@@ -1,0 +1,55 @@
+<br>
+
+<div class="container" style="margin-top:80px;">
+    <div align="center" >
+        <h1><i>Donaciones &nbsp;</i></h1>
+    </div><br>
+    <div class="row ">
+        <hr>
+        <div  class="col-lg-8">
+            <div *ngFor="let donaciones of listDonaciones; let i = index" >
+                <div *ngIf="donaciones.estado == 1 ">
+                    <div class="col-lg-12">
+                        <hr>
+                            <b>{{donaciones.titulo}}</b><br><br>
+                            <h3 align="left" [innerHtml]="donaciones.descripcion" style="font-size:1vw;" ></h3>
+                            <hr style="background: linear-gradient(to right, rgb(0, 197, 187),rgb(216, 0, 205));
+                            height: 1px;">
+                       
+                    </div>
+                </div>
+                
+                
+            </div>
+
+            <div class="mb-3" style="margin-left: 20px;">
+                <b>Nuestra ubicacion</b>      
+            </div>
+            <div class="map-responsive">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3102.185780180078!2d-68.0613414!3d-38.9654257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x960a33ca5f341a0f%3A0x913b4170f84d7b2d!2sFundacion%20Seno!5e0!3m2!1ses-419!2sar!4v1607951273366!5m2!1ses-419!2sar" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+        </div>
+       
+        <div class="col-lg-4">
+            <img  class="img-thumbnail" src="https://ci5.googleusercontent.com/proxy/xJ3hxoNlSUYiqleMcLpMdXFtjDq6GzlC3Po9jD_uQms6tWPgLPGVx3GpiAXrARASuAeG6gh3kJjtXSvqd2w3fGEvF6euzQ_uCMbG1s-1CNLL1TM=s0-d-e1-ft#https://mlb-s2-p.mlstatic.com/726261-MLB46107163527_052021-F.jpg" alt="">
+            <hr style="background: linear-gradient(to right, rgb(0, 197, 187),rgb(216, 0, 205));
+            height: 1px;">
+            <h3>
+                Tu aporte nos permite continuar llevando a cabo actividades para ayudar al niño oncológico con su día a día, generándole los momentos felices que se merece.
+            </h3>
+            <a type="button" class="btn btn-info btn-lg btn-block" href="https://mpago.la/1ErDrUt" align="center"  target="_blank">
+                Doná a través de MERCADOPAGO
+            </a>
+            <img class="img_responsive" src="https://i0.wp.com/www.proyecto4patas.org/wp-content/uploads/2018/04/mercado-pago-medios-de-pago.png?resize=250%2C89" alt="">
+         <hr>
+        </div>
+        <br><br>
+    </div>
+</div>
+
+    
+
+
+
+
+

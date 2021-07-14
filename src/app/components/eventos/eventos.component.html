@@ -1,0 +1,20 @@
+<br>
+<div class="container" style="margin-top:80px;">
+  <div class="row" style="text-align:center">
+    <b>Nuestros eventos</b> 
+  </div><br><br>
+  <div class="row">
+
+    <div *ngFor="let evento of lista_eventos" class="col-lg-3" >
+        <div class="shadow p-3 mb-5 bg-white rounded card" style=" /*border-radius: 15px; border-color: #d600d6bd;*/height: 380px;">
+            <img style="height:180px" [src]="evento.imagen_portada" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h3 class="card-title">{{evento.titulo}}</h3>
+             
+              <a type="button" class="btn btn-outline-info" (click)="verMas(evento)" >Ver mas</a>
+            </div>
+          </div>
+    </div>
+</div>
+</div>
+

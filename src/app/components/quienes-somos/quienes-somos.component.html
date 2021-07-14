@@ -1,0 +1,13 @@
+<br><br>
+<div class="container-fluid" style="margin-top:80px;">
+    <div *ngFor="let quienes of lista_quienes"  >
+        <div align="center" >
+            <b><i>¿Quiénes somos?</i></b>
+        </div><br><br>
+    
+        <div class="container">
+            <h3 align="justify" [innerHtml]="quienes.descripcion"></h3>
+        </div>
+    </div>
+</div>
+

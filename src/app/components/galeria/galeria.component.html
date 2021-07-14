@@ -1,0 +1,24 @@
+<br>
+<div class="container" style="margin-top:80px;margin-bottom: 20px;">
+  <div class="row">
+    <b>Galería</b> 
+  </div><br><br>
+  <div class="row">
+
+    <div *ngFor="let galeria of lista_galeria" class="col-lg-3">
+        <div class="card" style="width: 17rem;  border-radius: 15px; border-color: #5e00da;height: 350px;">
+            <img style="height:180px" [src]="galeria.imagen_portada" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h3 class="card-title" [innerHtml]="galeria.descripcion"></h3>
+            </div>
+            <div class="card-footer"  align="center">
+              <a type="button" class="btn btn-outline-info" (click)="verMas(galeria)" >Ver mas</a>
+            </div>
+          </div>
+         
+    </div>
+</div>
+
+</div>
+
+

@@ -1,0 +1,68 @@
+<br>
+<div class="container" style="margin-top:80px;margin-bottom: 20px;">
+    <h3><b>Gestionar provincias</b></h3>
+    <div class="row">
+        <div class="col-sm-8">
+                <div class="row">
+                   <div class="col-sm-4">
+                       <div class="form-group">
+                        <input placeholder="Ingrese provincia a buscar" [(ngModel)]="buscarProvincia" type="text" class="form-control">
+                       </div>
+                   </div>
+                </div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Descripcion</th>
+                        <th>Operaciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let provincia of listProvincias | filter:buscarProvincia | paginate:{itemsPerPage:5, currentPage:p}">
+                        <td>{{provincia.id_provincia}}</td>
+                        <td>{{provincia.descripcion}}</td>
+                        <td>
+                            <div class="btn-group">
+                                <button (click)="eliminarProvincia(provincia.id_provincia);"mat-icon-button class="icon delete-icon btn btn-danger" aria-label="">
+                                    <mat-icon>delete</mat-icon>
+                                </button>
+                                <button (click)="editarProvincia(provincia)" mat-icon-button class="icon create-icon btn btn-primary" aria-label="">
+                                    <mat-icon>create</mat-icon>
+                                </button>
+                            </div>
+                        </td>
+    
+                    </tr>
+                </tbody>
+            </table>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <pagination-controls (pageChange)="p = $event" ></pagination-controls>
+                    </div>
+                </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-header">Formulario de provincia</div>
+                <div class="card-body">
+                    <form [formGroup]="formProvincia" (ngSubmit)="guardarProvincia()" >
+                        <div class="form-group" >
+                        <input formControlName="id_provincia" type="hidden"class="form-control" >
+                        </div>
+                        <div class="form-group">
+                        <input [ngClass]="{'is-invalid': (formProvincia.get('descripcion')?.touched || formProvincia.get('descripcion')?.dirty) && formProvincia.get('descripcion')?.invalid }" formControlName="descripcion" placeholder="Ingrese una provincia" type="text"class="form-control">
+                            <div class="invalid-feedback">
+                                <span *ngIf="formProvincia.get('descripcion').hasError('required')">Campo requerido / </span>
+                                <span *ngIf="!formProvincia.get('descripcion').hasError('minLength')">Minimo de 4 caracteres</span>
+                            </div>
+                        </div>
+                        <button [disabled]="formProvincia.invalid" class="btn btn-success">Guardar provincia</button>
+                    </form>
+                </div>
+    
+            </div>
+    
+        </div>
+    </div>
+</div>

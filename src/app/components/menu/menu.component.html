@@ -1,0 +1,181 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-image: linear-gradient(to right, #00a8a8, #0088ac, #0065a3, #353d84, #510651);">
+  <a class="navbar-brand" href="#">
+    <img src="assets/logo2.png" width="45" height="45" alt="">
+    Fundación Seno
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="home">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="eventos">Eventos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="cuidados">Cuidados</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="galeria">Galería</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="donaciones-detalle">Donaciones</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="quienes-somos">¿Quienes somos?</a>
+      </li>
+      
+      
+      <li class="nav-item dropdown">
+        <a *ngIf="autServ.verificarUsuarioLogueado()" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Configuración
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" routerLink="provincia">Provincia</a>
+          <a class="dropdown-item" routerLink="localidad">Localidad</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" routerLink="tipo-acompaniamiento">Descripcion home</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" routerLink="categoria-donaciones">Categoría donaciones</a>
+          <a class="dropdown-item" routerLink="categoria-galeria">Categoría galería</a>
+          <a class="dropdown-item" routerLink="categoria-evento">Categoría eventos</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" routerLink="donaciones">Donaciones</a>
+          <a class="dropdown-item" routerLink="admin-galeria">Galería</a>
+          <a class="dropdown-item" routerLink="admin-evento">Eventos</a>
+          <a class="dropdown-item" routerLink="admin-cuidados">Cuidados</a>
+          <a class="dropdown-item" routerLink="quienes">Quienes somos</a>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item">
+          <a class="navbar-link" href="https://www.facebook.com/fundacionseno2017/">
+            <i class="fab fa-facebook fa-2x"> &nbsp;&nbsp;</i>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="navbar-link" href="https://www.instagram.com/fundacionseno/">
+            <i class="fab fa-instagram fa-2x">&nbsp;&nbsp;</i>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="navbar-link"  href="https://api.whatsapp.com/send?phone=542994223570&text=Hola!%20Quieres%20contactarte%20con%20nosotros!">
+            <i class="fab fa-whatsapp fa-2x"> &nbsp;</i>
+          </a>
+        </li>
+
+        <li class="nav-item" *ngIf="autServ.verificarUsuarioLogueado()">
+          <a class="nav-link" routerLink="registro">Registrar <span class="sr-only">(current)</span></a>
+        </li>
+
+
+        <ng-container *ngIf="!autServ.verificarUsuarioLogueado();else cierresesion">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="ingreso">Ingreso<span class="sr-only">(current)</span></a>
+          </li>
+        </ng-container>
+
+
+        <ng-template #cierresesion>
+          <li class="nav-item" *ngIf="autServ.verificarUsuarioLogueado()">
+            <a (click)="autServ.cerrarSesion()" class="nav-link" style="cursor: pointer;">Salir<span class="sr-only">(current)</span></a>
+          </li>
+        </ng-template>
+
+
+      </ul>
+    </form>
+  </div>
+</nav>
+
+
+
+
+
+<!--<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <img src="assets/logo.png" width="5%"  alt="">
+      &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;  
+
+      <a routerLink="home" style="color: white;" >
+        <button mat-icon-button class="icon home-icon btn btn-light" aria-label="">
+          <mat-icon>home</mat-icon>
+        </button>
+      </a>&nbsp;&nbsp;&nbsp;
+      
+        <div>
+          <a class="nav-link dropdown" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="text-decoration: none; color:#ffffff;" class="lead" *ngIf="autServ.verificarUsuarioLogueado()"> 
+            Formularios
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"   >
+            <a class="dropdown-item" routerLink="provincia" >Provincia</a>
+            <a class="dropdown-item" routerLink="localidad"> Localidad </a>
+            <a class="dropdown-item" routerLink="tipo-acompaniamiento"> Descripcion de HOME </a>
+            <a class="dropdown-item" routerLink="categoria-donaciones"> Categoria Donaciones   </a>
+            <a class="dropdown-item" routerLink="categoria-galeria"> Categoria Galeria  </a>
+            <a class="dropdown-item" routerLink="categoria-evento"> Categoria Eventos  </a>
+            <a class="dropdown-item" routerLink="donaciones">Donaciones</a>
+            <a class="dropdown-item" routerLink="admin-galeria">Galeria</a>
+            <a class="dropdown-item" routerLink="admin-evento">Eventos</a>
+            <a class="dropdown-item" routerLink="admin-cuidados">Cuidados</a>
+            <a class="dropdown-item" routerLink="quienes">¿Quienes somos?</a>
+
+          </div>    
+          
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a routerLink="eventos" style="text-decoration: none; color:#ffffff; " class="lead">
+          Eventos
+         </a>&nbsp;&nbsp;&nbsp;&nbsp;
+         <a routerLink="cuidados" style="text-decoration: none; color:#ffffff; " class="lead">
+          Cuidados
+         </a>&nbsp;&nbsp;&nbsp;&nbsp;
+         <a routerLink="galeria" style="text-decoration: none; color:#ffffff; " class="lead">
+          Galeria
+         </a>
+         &nbsp;&nbsp;&nbsp;&nbsp;
+         <a routerLink="quienes-somos" style="text-decoration: none; color:#ffffff; " class="lead">
+          ¿Quiénes somos?
+         </a>&nbsp;&nbsp;&nbsp; &nbsp;
+         <a href="https://m.facebook.com/fundacionsendero/?locale2=es_LA" style="color: white;" target="_blank">
+          <button mat-icon-button class="icon facebook-icon btn btn-light" aria-label="">
+            <mat-icon>facebook</mat-icon>
+          </button>
+        </a>&nbsp;&nbsp;&nbsp;
+        
+          <a href="https://api.whatsapp.com/send?phone=542994223570&text=Hola!%20Quieres%20contactarte%20con%20nosotros!" style="color: rgb(247, 247, 247);" target="_blank">
+            <button mat-icon-button class="icon phone-icon btn btn-light" aria-label="">
+              <mat-icon>phone_android</mat-icon>
+            </button></a>&nbsp;&nbsp;&nbsp;
+    
+         
+        
+        <a routerLink="donaciones-detalle" style="text-decoration: none; color:#ffffff; " class="lead" >
+         Donaciones
+        </a>&nbsp;&nbsp;&nbsp; &nbsp;
+
+        <a routerLink="registro" style="text-decoration: none; color:#ffffff; " class="lead" *ngIf="autServ.verificarUsuarioLogueado()">Registrarse</a>
+        &nbsp;&nbsp;&nbsp; &nbsp;
+
+         <ng-container *ngIf="!autServ.verificarUsuarioLogueado();else cierresesion">
+         
+           <a routerLink="ingreso" style="text-decoration: none; color:#ffffff; " class="lead">Ingresar</a>
+         </ng-container>
+         <ng-template #cierresesion>
+          <a (click)="autServ.cerrarSesion()" style="text-decoration: none; color:#ffffff; cursor: pointer;" class="lead">Salir</a>
+         </ng-template>
+      </mat-toolbar>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>-->
+
+
