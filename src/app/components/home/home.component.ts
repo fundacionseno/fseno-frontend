@@ -52,7 +52,7 @@ export class HomeComponent implements OnInit {
   }
   obtenerEventos()
   {
-    this.eventoServ.getEvento().subscribe(
+    this.eventoServ.getEventoPublic().subscribe(
       resultado => {
         this.lista_eventos = resultado;
       }
@@ -68,7 +68,7 @@ export class HomeComponent implements OnInit {
 
   obtenerGaleria()
   {
-    this.galeriaServ.getGaleria().subscribe(
+    this.galeriaServ.getGaleriaPublic().subscribe(
       resultado => {
         this.lista_galeria = resultado;
       }
@@ -87,7 +87,7 @@ export class HomeComponent implements OnInit {
 
   obtenerCuidados()
   {
-    this.cuidadosServ.getCuidados().subscribe(
+    this.cuidadosServ.getCuidadosPublic().subscribe(
       resultado => {
         this.lista_cuidados = resultado;
       }
