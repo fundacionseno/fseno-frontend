@@ -11,12 +11,12 @@ export class AutenticacionService {
 
   register(datosRegistro:IUsuario)
   {
-    return this.http.post('http://localhost:3000/registro',datosRegistro);
+    return this.http.post('https://fseno-backend.herokuapp.com/registro',datosRegistro);
   }
 
   login(datosIngreso:IUsuario)
   {
-    return this.http.post('http://localhost:3000/ingreso',datosIngreso);
+    return this.http.post('https://fseno-backend.herokuapp.com/ingreso',datosIngreso);
   }
 
   verificarUsuarioLogueado()

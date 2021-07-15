@@ -11,23 +11,23 @@ export class DonacionesService {
 
   getDonacion()
   {
-    return this.http.get<IDonaciones[]>('http://localhost:3000/donaciones');
+    return this.http.get<IDonaciones[]>('https://fseno-backend.herokuapp.com/donaciones');
   }
 
   saveDonacion(unaDonacion:IDonaciones)
   {
-    return this.http.post('http://localhost:3000/donaciones',unaDonacion);
+    return this.http.post('https://fseno-backend.herokuapp.com/donaciones',unaDonacion);
   }
 
   updateDonacion(unaDonacion:IDonaciones)
   {
     let id:number = unaDonacion.id_donaciones;
-    return this.http.put('http://localhost:3000/donaciones/'+id,unaDonacion);
+    return this.http.put('https://fseno-backend.herokuapp.com/donaciones/'+id,unaDonacion);
   }
 
   deleteDonacion(id:number)
   {
-    return this.http.delete('http://localhost:3000/donaciones/'+id);  
+    return this.http.delete('https://fseno-backend.herokuapp.com/donaciones/'+id);  
   }
 
 }

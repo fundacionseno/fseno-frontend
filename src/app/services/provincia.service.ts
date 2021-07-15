@@ -12,24 +12,24 @@ export class ProvinciaService {
   }
   getProvincia()
   {
-    return this.http.get<IProvincia[]>('http://localhost:3000/provincia');
+    return this.http.get<IProvincia[]>('https://fseno-backend.herokuapp.com/provincia');
   }
 
   saveProvincia(unaProvincia:IProvincia)
   {
-    return this.http.post('http://localhost:3000/provincia',unaProvincia);
+    return this.http.post('https://fseno-backend.herokuapp.com/provincia',unaProvincia);
     
   }
 
   updateProvincia(unaProvincia:IProvincia)
   {
     let id:number = unaProvincia.id_provincia;
-    return this.http.put('http://localhost:3000/provincia/'+id,unaProvincia);
+    return this.http.put('https://fseno-backend.herokuapp.com/provincia/'+id,unaProvincia);
   }
 
   deleteProvincia(id:number)
   {
-    return this.http.delete('http://localhost:3000/provincia/'+id);
+    return this.http.delete('https://fseno-backend.herokuapp.com/provincia/'+id);
   }
 
 }

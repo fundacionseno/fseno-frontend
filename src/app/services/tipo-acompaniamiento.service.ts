@@ -11,23 +11,23 @@ export class TipoAcompaniamientoService {
    }
    getAcomp()
   {
-    return this.http.get<IAcomp[]>('http://localhost:3000/acompaniamiento');
+    return this.http.get<IAcomp[]>('https://fseno-backend.herokuapp.com/acompaniamiento');
   }
 
   saveAcomp(unAcomp:IAcomp)
   {
-    return this.http.post('http://localhost:3000/acompaniamiento',unAcomp);
+    return this.http.post('https://fseno-backend.herokuapp.com/acompaniamiento',unAcomp);
     
   }
 
   updateAcomp(unAcomp:IAcomp)
   {
     let id:number = unAcomp.id_acomp;
-    return this.http.put('http://localhost:3000/acompaniamiento/'+id,unAcomp);
+    return this.http.put('https://fseno-backend.herokuapp.com/acompaniamiento/'+id,unAcomp);
   }
 
   deleteAcomp(id:number)
   {
-    return this.http.delete('http://localhost:3000/acompaniamiento/'+id);
+    return this.http.delete('https://fseno-backend.herokuapp.com/acompaniamiento/'+id);
   }
 }

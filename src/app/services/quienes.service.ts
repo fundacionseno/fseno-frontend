@@ -10,22 +10,22 @@ export class QuienesService {
 
   getQuienes()
   {
-    return this.http.get<IQuienes[]>('http://localhost:3000/quienes');
+    return this.http.get<IQuienes[]>('https://fseno-backend.herokuapp.com/quienes');
   }
 
   saveQuienes(quienes:IQuienes)
   {
-    return this.http.post('http://localhost:3000/quienes',quienes);
+    return this.http.post('https://fseno-backend.herokuapp.com/quienes',quienes);
   }
 
   updateQuienes(quienes:IQuienes)
   {
     let id:number = quienes.id_qs;
-    return this.http.put('http://localhost:3000/quienes/'+id,quienes);
+    return this.http.put('https://fseno-backend.herokuapp.com/quienes/'+id,quienes);
   }
 
   deleteQuienes(id:number)
   {
-    return this.http.delete('http://localhost:3000/quienes/'+id);
+    return this.http.delete('https://fseno-backend.herokuapp.com/quienes/'+id);
   }
 }

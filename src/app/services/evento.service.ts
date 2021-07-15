@@ -16,7 +16,7 @@ export class EventoService {
   updateEvento(evento:IEvento)
   {
     let id_evento = evento.id_evento;
-    return this.http.put('http://localhost:3000/eventos/'+id_evento,evento);
+    return this.http.put('https://fseno-backend.herokuapp.com/eventos/'+id_evento,evento);
   }
 
   saveEvento(unEvento:IEvento,files:FileList){
@@ -35,17 +35,17 @@ export class EventoService {
       fd.append('img_evento',files[index]);
     }
 
-    return this.http.post('http://localhost:3000/eventos',fd)
+    return this.http.post('https://fseno-backend.herokuapp.com/eventos',fd)
   }
 
   getEvento()
   {
-    return this.http.get<IEvento[]>('http://localhost:3000/eventos');
+    return this.http.get<IEvento[]>('https://fseno-backend.herokuapp.com/eventos');
   }
 
   getImageEvento(id_evento:number)
   {
-    return this.http.get<IEventoDetalle[]>('http://localhost:3000/eventos-imagenes/'+id_evento);
+    return this.http.get<IEventoDetalle[]>('https://fseno-backend.herokuapp.com/eventos-imagenes/'+id_evento);
   }
 
   addImageEvento(id_evento:number,files:FileList)
@@ -55,22 +55,22 @@ export class EventoService {
     for (let index = 0; index < files.length; index++) {
       fd.append('img_evento',files[index]);
     }
-    return this.http.put('http://localhost:3000/agregar-imagenes-evento/'+id_evento,fd);
+    return this.http.put('https://fseno-backend.herokuapp.com/agregar-imagenes-evento/'+id_evento,fd);
   }
   
   deleteImageEvento(id_img_evento:number, public_id:string)
   {
-    return this.http.delete('http://localhost:3000/detalles-imagen-evento/'+id_img_evento+'/'+public_id);
+    return this.http.delete('https://fseno-backend.herokuapp.com/detalles-imagen-evento/'+id_img_evento+'/'+public_id);
   }
 
   deleteEvento(id_evento:number)
   {
-    return this.http.delete('http://localhost:3000/eventos/'+id_evento);
+    return this.http.delete('https://fseno-backend.herokuapp.com/eventos/'+id_evento);
   }
 
   //metodo  encargado de editar un registro y poner la portada en estado 0(cero)
   assingPortada(id_img_evento:number,id_evento:number)
   {
-    return this.http.get('http://localhost:3000/evento-portada/'+id_img_evento+'/'+id_evento);
+    return this.http.get('https://fseno-backend.herokuapp.com/evento-portada/'+id_img_evento+'/'+id_evento);
   }
 }

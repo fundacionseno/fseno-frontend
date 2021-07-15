@@ -14,7 +14,7 @@ export class GaleriaService {
    updateGaleria(galeria:IGaleria)
    {
      let id_galeria = galeria.id_galeria;
-     return this.http.put('http://localhost:3000/galeria/'+id_galeria,galeria);
+     return this.http.put('https://fseno-backend.herokuapp.com/galeria/'+id_galeria,galeria);
    }
 
    saveGaleria(datosGaleria:IGaleria, files:FileList)
@@ -32,17 +32,17 @@ export class GaleriaService {
       fd.append('img_galeria',files[index])
     }
 
-     return this.http.post('http://localhost:3000/galeria',fd);
+     return this.http.post('https://fseno-backend.herokuapp.com/galeria',fd);
    }
 
    getGaleria()
    {
-     return this.http.get<IGaleria[]>('http://localhost:3000/galeria');
+     return this.http.get<IGaleria[]>('https://fseno-backend.herokuapp.com/galeria');
    }
 
    getImageGaleria(id_galeria:number)
    {
-     return this.http.get<IGaleriaDetalle[]>('http://localhost:3000/galeria-imagenes/'+id_galeria)
+     return this.http.get<IGaleriaDetalle[]>('https://fseno-backend.herokuapp.com/galeria-imagenes/'+id_galeria)
    }
 
    addImageGaleria(id_galeria:number, files:FileList)
@@ -53,22 +53,22 @@ export class GaleriaService {
       fd.append('img_galeria',files[index]);  
     }
 
-    return this.http.put('http://localhost:3000/agregar-imagenes-galeria/'+id_galeria,fd);
+    return this.http.put('https://fseno-backend.herokuapp.com/agregar-imagenes-galeria/'+id_galeria,fd);
    }
 
    deleteImageGaleria(id_img_galeria:number,public_id:string)
    {
-    return this.http.delete('http://localhost:3000/detalles-imagen-galeria/'+id_img_galeria+'/'+public_id);
+    return this.http.delete('https://fseno-backend.herokuapp.com/detalles-imagen-galeria/'+id_img_galeria+'/'+public_id);
    }
 
    deleteGaleria(id_galeria:number)
    {
-    return this.http.delete('http://localhost:3000/galeria/'+id_galeria);
+    return this.http.delete('https://fseno-backend.herokuapp.com/galeria/'+id_galeria);
    }
 
     //metodo  encargado de editar un registro y poner la portada en estado 0(cero)
   assingPortada(id_img_galeria:number,id_galeria:number)
   {
-    return this.http.get('http://localhost:3000/galeria-portada/'+id_img_galeria+'/'+id_galeria);
+    return this.http.get('https://fseno-backend.herokuapp.com/galeria-portada/'+id_img_galeria+'/'+id_galeria);
   }
 }

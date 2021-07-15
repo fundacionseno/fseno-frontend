@@ -12,22 +12,22 @@ export class CategoriaDonacionesService {
   }
   getCategoriaDon()
   {
-    return this.http.get<ICatDon[]>('http://localhost:3000/categoria_donaciones');
+    return this.http.get<ICatDon[]>('https://fseno-backend.herokuapp.com/categoria_donaciones');
   }
 
   saveCategoriaDon(unaCategoD:ICatDon)
   {
-    return this.http.post('http://localhost:3000/categoria_donaciones',unaCategoD);
+    return this.http.post('https://fseno-backend.herokuapp.com/categoria_donaciones',unaCategoD);
   }
 
   updateCategoriaDon(unaCategoD:ICatDon)
   {
     let id:number = unaCategoD.id_categoria_donaciones;
-    return this.http.put('http://localhost:3000/categoria_donaciones/'+id,unaCategoD);
+    return this.http.put('https://fseno-backend.herokuapp.com/categoria_donaciones/'+id,unaCategoD);
   }
 
   deleteCategoriaD(id:number)
   {
-    return this.http.delete('http://localhost:3000/categoria_donaciones/'+id);
+    return this.http.delete('https://fseno-backend.herokuapp.com/categoria_donaciones/'+id);
   }
 }

@@ -13,24 +13,24 @@ export class CategoriaGaleriaService {
    }
    getCategoria()
   {
-    return this.http.get<ICategoria[]>('http://localhost:3000/categoria_galeria');
+    return this.http.get<ICategoria[]>('https://fseno-backend.herokuapp.com/categoria_galeria');
   }
 
   saveCategoria(unaCategoria:ICategoria)
   {
-    return this.http.post('http://localhost:3000/categoria_galeria',unaCategoria);
+    return this.http.post('https://fseno-backend.herokuapp.com/categoria_galeria',unaCategoria);
     
   }
 
   updateCategoria(unaCategoria:ICategoria)
   {
     let id:number = unaCategoria.id_categoria;
-    return this.http.put('http://localhost:3000/categoria_galeria/'+id,unaCategoria);
+    return this.http.put('https://fseno-backend.herokuapp.com/categoria_galeria/'+id,unaCategoria);
   }
 
   deleteCategoria(id:number)
   {
-    return this.http.delete('http://localhost:3000/categoria_galeria/'+id);
+    return this.http.delete('https://fseno-backend.herokuapp.com/categoria_galeria/'+id);
   }
 
 }

@@ -12,24 +12,24 @@ export class CategoriaEventoService {
 
   getCategoria()
   {
-    return this.http.get<ICategoE[]>('http://localhost:3000/categoria_eventos');
+    return this.http.get<ICategoE[]>('https://fseno-backend.herokuapp.com/categoria_eventos');
   }
 
   saveCategoria(unaCatego:ICategoE)
   {
-    return this.http.post('http://localhost:3000/categoria_eventos',unaCatego);
+    return this.http.post('https://fseno-backend.herokuapp.com/categoria_eventos',unaCatego);
     
   }
 
   updateCategoria(unaCatego:ICategoE)
   {
     let id:number = unaCatego.id_categoria_eventos;
-    return this.http.put('http://localhost:3000/categoria_eventos/'+id,unaCatego);
+    return this.http.put('https://fseno-backend.herokuapp.com/categoria_eventos/'+id,unaCatego);
   }
 
   deleteCategoria(id:number)
   {
-    return this.http.delete('http://localhost:3000/categoria_eventos/'+id);
+    return this.http.delete('https://fseno-backend.herokuapp.com/categoria_eventos/'+id);
   }
 
 }
