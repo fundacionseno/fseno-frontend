@@ -14,6 +14,11 @@ export class DonacionesService {
     return this.http.get<IDonaciones[]>('https://fseno-backend.herokuapp.com/donaciones');
   }
 
+  getDonacionPublic()
+  {
+    return this.http.get<IDonaciones[]>('https://fseno-backend.herokuapp.com/donaciones-public');
+  }
+
   saveDonacion(unaDonacion:IDonaciones)
   {
     return this.http.post('https://fseno-backend.herokuapp.com/donaciones',unaDonacion);

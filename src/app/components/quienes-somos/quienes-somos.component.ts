@@ -18,7 +18,7 @@ export class QuienesSomosComponent implements OnInit {
   }
   obtenerQuienes()
   {
-    this.quienesServ.getQuienes().subscribe(
+    this.quienesServ.getQuienesPublic().subscribe(
       resultado => {
         this.lista_quienes = resultado;
       }

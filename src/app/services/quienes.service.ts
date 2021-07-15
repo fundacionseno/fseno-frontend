@@ -13,6 +13,11 @@ export class QuienesService {
     return this.http.get<IQuienes[]>('https://fseno-backend.herokuapp.com/quienes');
   }
 
+  getQuienesPublic()
+  {
+    return this.http.get<IQuienes[]>('https://fseno-backend.herokuapp.com/quienes-public');
+  }
+
   saveQuienes(quienes:IQuienes)
   {
     return this.http.post('https://fseno-backend.herokuapp.com/quienes',quienes);

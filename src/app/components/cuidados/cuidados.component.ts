@@ -23,7 +23,7 @@ export class CuidadosComponent implements OnInit {
 
   obtenerCuidados()
   {
-    this.cuidadosServ.getCuidados().subscribe(
+    this.cuidadosServ.getCuidadosPublic().subscribe(
       resultado => {
         this.lista_cuidados = resultado;
       }

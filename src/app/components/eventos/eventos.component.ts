@@ -24,7 +24,7 @@ export class EventosComponent implements OnInit {
 
   obtenerEventos()
   {
-    this.eventoServ.getEvento().subscribe(
+    this.eventoServ.getEventoPublic().subscribe(
       resultado => {
         this.lista_eventos = resultado;
       }

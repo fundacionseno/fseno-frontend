@@ -19,7 +19,7 @@ export class GaleriaComponent implements OnInit {
   }
   obtenerGaleria()
   {
-    this.galeriaServ.getGaleria().subscribe(
+    this.galeriaServ.getGaleriaPublic().subscribe(
       resultado => {
         this.lista_galeria = resultado;
       }

@@ -35,6 +35,11 @@ export class CuidadosService {
     return this.http.get<ICuidados[]>('https://fseno-backend.herokuapp.com/cuidados');
   }
 
+  getCuidadosPublic()
+  {
+    return this.http.get<ICuidados[]>('https://fseno-backend.herokuapp.com/cuidados-public');
+  }
+
   getImageCuidados(id_cuidados:number)
   {
     return this.http.get<ICuidadosDetalle[]>('https://fseno-backend.herokuapp.com/cuidados-imagenes/'+id_cuidados);

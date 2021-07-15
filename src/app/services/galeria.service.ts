@@ -40,6 +40,11 @@ export class GaleriaService {
      return this.http.get<IGaleria[]>('https://fseno-backend.herokuapp.com/galeria');
    }
 
+   getGaleriaPublic()
+   {
+     return this.http.get<IGaleria[]>('https://fseno-backend.herokuapp.com/galeria-public');
+   }
+
    getImageGaleria(id_galeria:number)
    {
      return this.http.get<IGaleriaDetalle[]>('https://fseno-backend.herokuapp.com/galeria-imagenes/'+id_galeria)

@@ -43,6 +43,11 @@ export class EventoService {
     return this.http.get<IEvento[]>('https://fseno-backend.herokuapp.com/eventos');
   }
 
+  getEventoPublic()
+  {
+    return this.http.get<IEvento[]>('https://fseno-backend.herokuapp.com/eventos-public');
+  }
+
   getImageEvento(id_evento:number)
   {
     return this.http.get<IEventoDetalle[]>('https://fseno-backend.herokuapp.com/eventos-imagenes/'+id_evento);
