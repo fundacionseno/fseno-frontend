@@ -1,13 +1,18 @@
 <br>
 <div class="container" style="margin-top:80px;">
-  <div class="row">
-    <div class="col-lg-8">
+  <div class="row mb-3">
+    <!--<div class="col-lg-8">
       <b><i>{{titulo}}</i></b>
     </div> 
     <div align="center">
       <b><i>{{fecha_hora}}</i></b>
-    </div>
-  </div><br><br>
+    </div>-->
+
+    <blockquote class="blockquote">
+      <p class="mb-0" style="color: rgb(190, 0, 79);">{{titulo}}</p>
+      <footer class="blockquote-footer" style="color: rgb(139, 23, 72);">{{fecha_hora}}</footer>
+    </blockquote>
+  </div>
 
     <div class="row">
 
@@ -34,7 +39,8 @@
           </a>
         </div>
       </div>
-      <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+      <div class="col-lg-4 col-md-4 col-sm-4 col-12 mt-3">
+        <h1>Descripción del evento</h1>
         <h3><div [innerHtml]="descripcion"></div></h3>
       </div>
       

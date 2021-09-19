@@ -6,7 +6,8 @@
   <div class="row">
 
     <div *ngFor="let galeria of lista_galeria" class="col-lg-3">
-        <div class="card" style="width: 17rem;  border-radius: 15px; border-color: #5e00da;height: 350px;">
+
+        <!--<div class="card" style="width: 17rem;  border-radius: 15px; border-color: #5e00da;height: 350px;">
             <img style="height:180px" [src]="galeria.imagen_portada" class="card-img-top" alt="...">
             <div class="card-body">
               <h3 class="card-title" [innerHtml]="galeria.descripcion"></h3>
@@ -14,8 +15,22 @@
             <div class="card-footer"  align="center">
               <a type="button" class="btn btn-outline-info" (click)="verMas(galeria)" >Ver mas</a>
             </div>
+        </div>-->
+
+        <div class="card mb-3" >
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img style="height:180px" [src]="galeria.imagen_portada" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 [innerHtml]="galeria.descripcion" class="card-title"></h5>
+                <a type="button" class="btn btn-info btn-block" (click)="verMas(galeria)" >Ver album</a>
+              </div>
+            </div>
           </div>
-         
+        </div>
+
     </div>
 </div>
 
