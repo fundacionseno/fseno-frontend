@@ -1,4 +1,4 @@
-.img-box1 img {
+/*.img-box1 img {
     transition: transform 0.25s ease;
     cursor: zoom-in;
     width: 100%;
@@ -24,9 +24,9 @@
 
   .row .col-lg-3{
     margin-bottom: 20px;
-}
+}*/
 
-b{
+/*b{
   font-size:39px;
 text-transform: inherit;
 color: #ff009d;
@@ -34,5 +34,5 @@ text-shadow:
             
             3px 8px 15px rgba(0,0,0,0.1),
             3px 8px  5px rgba(0,0,0,0.3);
-}
+}*/
 

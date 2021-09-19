@@ -17,10 +17,10 @@
             </div>
         </div>-->
 
-        <div class="card mb-3" >
+        <!--<div class="card mb-3" >
           <div class="row no-gutters">
             <div class="col-md-4">
-              <img style="height:180px" [src]="galeria.imagen_portada" alt="...">
+              <img style="height:180px" class="img-fluid"  [src]="galeria.imagen_portada" alt="...">
             </div>
             <div class="col-md-8">
               <div class="card-body">
@@ -28,6 +28,16 @@
                 <a type="button" class="btn btn-info btn-block" (click)="verMas(galeria)" >Ver album</a>
               </div>
             </div>
+          </div>
+        </div>-->
+
+        <div class="card text-white bg-danger mb-3" >
+          <img style="height:180px" [src]="galeria.imagen_portada" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"  [innerHtml]="galeria.descripcion"></h5>
+          </div>
+          <div class="card-footer">
+            <a type="button" class="btn btn-outline-danger btn-block" (click)="verMas(galeria)" >Ver álbum</a>
           </div>
         </div>
 
