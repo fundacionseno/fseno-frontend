@@ -1,8 +1,10 @@
 <br>
 <div class="container" style="margin-top:80px;margin-bottom: 20px;">
-  <div class="row">
-    <b>Galería</b> 
-  </div><br><br>
+  <div class="row mb-3">
+    <blockquote class="blockquote">
+      <h1 class="display-4" style="color: rgb(255 ,0, 106);"><b>Galería</b></h1>
+    </blockquote>
+  </div>
   <div class="row">
 
     <div *ngFor="let galeria of lista_galeria" class="col-lg-3">
@@ -31,13 +33,13 @@
           </div>
         </div>-->
 
-        <div class="card text-white bg-danger mb-3" >
+        <div class="shadow p-3 rounded card text-white bg-primary mb-3" >
           <img style="height:180px" [src]="galeria.imagen_portada" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title"  [innerHtml]="galeria.descripcion"></h5>
           </div>
           <div class="card-footer">
-            <a type="button" class="btn btn-outline-danger btn-block" (click)="verMas(galeria)" >Ver álbum</a>
+            <a type="button" class="btn btn-light btn-block" (click)="verMas(galeria)" >Ver álbum</a>
           </div>
         </div>
 
