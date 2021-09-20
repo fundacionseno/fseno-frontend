@@ -1,9 +1,9 @@
 b{
     font-size:39px;
   text-transform: uppercase;
-  color: #1ec626;
-  text-shadow: 0  2px  0   #238b15,
-               0  4px  0   #137c4b,
+  color: rgb(255 ,0, 106);
+  text-shadow: 0  2px  0   #8a005c,
+               0  4px  0   #44002f,
             
               3px 8px 15px rgba(0,0,0,0.1),
               3px 8px  5px rgba(0,0,0,0.3);

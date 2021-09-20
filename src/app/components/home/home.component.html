@@ -40,11 +40,11 @@
       <div class="px-4"><h2><p>Breve descripcion</p></h2></div>
       <hr class="my-auto flex-grow-1">
     </div>-->
-        <div class="mb-3"><h2><p class="text-center">Breve descripcion</p></h2></div>
+        <div class="mb-3"><h2><p class="text-center">Breve descripción</p></h2></div>
         <div class="row">
           <div class="col-12">
             <div *ngFor="let tipo of listAcomp" >
-              <h3 align="justify" [innerHtml]="tipo.descripcion"></h3>
+              <h3 class="text-dark" align="justify" [innerHtml]="tipo.descripcion"></h3>
            </div>
           </div>
         </div>
@@ -56,16 +56,7 @@
         </div>
    
 
-    <br><h2><p>Galeria</p></h2><br>
-  <div class="row">
-    <div *ngFor="let galeria of lista_galeria;let i = index" class="col-lg-3" >
-        <div *ngIf="galeria.estado_home == 1 ">
-          <div class="img-box1" >
-              <img style="height:auto" class="img-responsive" [src]="galeria.imagen_portada" >
-            </div>
-      </div>
-</div>
-</div>
+   
 
 
 
@@ -73,8 +64,10 @@
   <br><h2><p>Eventos</p></h2><br>
   <div class="row">
     <div *ngFor="let evento of lista_eventos;let i = index" class="col-lg-3 col-md-6 col-sm-6 col-12" >
-        <div *ngIf="evento.estado_home == 1 ">
-        <div class="card" style="border-radius: 15px; border-color: rgb(216, 0, 205);">
+
+      <div *ngIf="evento.estado_home == 1 ">
+
+        <!--<div class="card" style="border-radius: 15px; border-color: rgb(216, 0, 205);">
             <img style="height:auto" [src]="evento.imagen_portada" class="img-responsive" alt="...">
             <div class="card-body">
               <h3 class="card-title"><b>{{evento.titulo}}</b></h3>
@@ -83,23 +76,60 @@
               <a type="button" class="btn btn-outline-info" (click)="verMasEventos(evento)" >Ver mas</a>
              
             </div>
+        </div>-->
+
+        <div class="shadow p-1 rounded card text-white mb-3"  style="background-image:linear-gradient(to right, #00a8a8, #0065a3, #353d84, #510651)">
+          <img style="height:180px" [src]="evento.imagen_portada" class="card-img-top" alt="...">
+          <div class="card-header text-center text-uppercase"  [innerHtml]="evento.titulo" style="height: 60px;font-weight: bold;"></div>
+          <div class="card-body">
+            <h3 class="card-title">Fecha y hora: {{evento.fecha_hora}}</h3>
+            <h3 class="card-title">Precio: ${{evento.precio}}</h3>
+          </div>
+          <div class="card-footer">
+            <a type="button" class="btn btn-light btn-block text-dark"  (click)="verMasEventos(evento)" >Ver más</a>
+          </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+</div>
+
+
+<br><h2><p>Galería</p></h2><br>
+<div class="row">
+  <div *ngFor="let galeria of lista_galeria;let i = index" class="col-lg-3" >
+      <div *ngIf="galeria.estado_home == 1 ">
+        <div class="img-box1" >
+            <img style="height:auto" class="img-responsive" [src]="galeria.imagen_portada" >
           </div>
     </div>
 </div>
-
 </div>
 
 
   <br><h2><p>Tipos de cuidados</p></h2><br>
 <div class="row">
   <div *ngFor="let cuidados of lista_cuidados" class="col-lg-3" >
-      <div class="card" style="border-radius: 15px; border-color: #ff9100bd;">
+
+      <!--<div class="card" style="border-radius: 15px; border-color: #ff9100bd;">
           <img style="height:auto" [src]="cuidados.imagen_portada" class="img-responsive" alt="...">
           <div class="card-body">
             <h3 class="card-title"><b>{{cuidados.titulo}}</b></h3>
             <a type="button" class="btn btn-outline-info" (click)="verMasCuidados(cuidados)" >Ver mas</a>
           </div>
+        </div>-->
+
+        <div class="shadow p-1 rounded card text-white mb-3"  style="background-image:linear-gradient(to right, #d12b7e, #c30665, #a70368, #5d003a);">
+          <img style="height:180px" [src]="cuidados.imagen_portada" class="card-img-top" alt="...">
+          <div class="card-header text-center text-uppercase"  [innerHtml]="cuidados.titulo" style="height: 60px;font-weight: bold;"></div>
+          <div class="card-footer">
+            <a type="button" class="btn btn-light btn-block text-dark"  (click)="verMasCuidados(cuidados)" >Ver más</a>
+          </div>
         </div>
+
   </div>
 </div>
 </div>
