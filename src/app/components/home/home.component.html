@@ -8,8 +8,8 @@
       </div>
     </div>
     <div class="row">
-        <div class="col-lg-1"></div>
-        <div class="col-lg-10" >
+       
+        <div class="col-lg-12" >
           <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel"  style="overflow: hidden; border-radius: 15px;">
             <ol class="carousel-indicators">
               <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -19,7 +19,7 @@
             <div class="carousel-inner">
               <div *ngFor="let evento of lista_eventos;let i = index; let primero = first" [ngClass]="{active:primero}"class="carousel-item ">
                 
-                <img style="height: 550px; width: 400px;" [src]="evento.imagen_portada" class="d-block w-100" alt="...">
+                <img [src]="evento.imagen_portada" class="d-block w-100 " alt="...">
               </div>
           
             </div>

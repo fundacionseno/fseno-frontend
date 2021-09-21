@@ -11,7 +11,7 @@ export class TipoAcompaniamientoService {
    }
    getAcomp()
   {
-    return this.http.get<IAcomp[]>('https://fseno-backend.herokuapp.com/acompaniamiento');
+    return this.http.get<IAcomp[]>('https://fseno-backend.herokuapp.com/acompaniamiento-public');
   }
 
   saveAcomp(unAcomp:IAcomp)
