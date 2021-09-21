@@ -35,12 +35,12 @@
           </div>
         </div>-->
 
-        <div class="shadow p-3 rounded card text-white bg-secondary mb-3"  >
+        <div class="shadow p-3 rounded card text-white bg-secondary mb-3" style="background-image:linear-gradient(to right, #d12b7e, #c30665, #a70368, #5d003a);" >
           <img style="height:180px" [src]="galeria.imagen_portada" class="card-img-top" alt="...">
           <div class="card-header text-center"  [innerHtml]="galeria.descripcion" style="height: 60px;font-weight: bold;"></div>
 
           <div class="card-footer">
-            <a type="button" class="btn btn-dark btn-block "  (click)="verMas(galeria)" >Ver álbum</a>
+            <a type="button" class="btn btn-light btn-block text-dark"  (click)="verMas(galeria)" >Ver álbum</a>
           </div>
         </div>
 
